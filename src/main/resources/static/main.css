@@ -1,0 +1,12 @@
+.@charset "ISO-8859-1";
+
+
+.tumbnail {
+	max-witdh: 75px;
+	max-height: 75px;
+}
+
+.flash {
+	background-color: lightblue;
+	padding: 1em;
+}

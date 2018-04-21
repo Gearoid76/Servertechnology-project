@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Recipes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1> Recipes</h1>
+	<table>
+	<tr>
+		<th> Recipes</th>
+	</tr>
+	<tbody>
+			<tr th:each = "Recipes : ${recipes}">
+			<td><a th:href="@{delete/{id}(id=$recipe.id})}">Delete</a></td>
+	</tr>
+	</tbody>
+	</table>
+	<a href="/add" class="btnbtn-primary">Add Recipe</a>
+</body>
+</html>

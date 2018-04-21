@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1" />
+	<title>Recipes</title>
+	<link rel="stylesheet" href="/main.css"/>
+</head>
+	<body>
+	<h1>Recipe List</h1>
+	<!--  <h3 th:if="${#vars['flash.message']}" th:text="${#vars['flash.message']}" class="flash"></h3>
+	<div> 
+ 	<h3 th:text="${page.number +1 + ' of ' + ${page.totalPages}"/>  
+	 
+	</div> -->
+		<table>
+			<tr>
+				<th>Title</th>
+				<th>samplepicture</th>
+				<th> Category</th>
+				<th> Diet</th>
+			</tr>
+				<tr th:each ="recipe :${recipes}">
+				<td th:text="${recipe.title}"></td>
+				<td th:text="${recipe.samplepicture}"></td>
+				<td th:text="${recipe.category.cname}"></td>
+				<td th:text="${recipe.diet.dname}"></td>
+				
+				
+			<td><a th:href="@{/delete/{id}(id=${recipe.id})}">Delete</a></td>
+			</tr>
+		</table>
+ <a href="/addrecipe">Add Recipe</a>
+</body>
+</html>
